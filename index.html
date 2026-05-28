@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>整龍 -SEIRYU- | 自分自身を調律するための体験</title>
+    <meta name="description" content="波動解析・コンディショニング・龍体フトマニを描く瞑想を通して、本来の自分を取り戻し空間を整える体験を提供します。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader">
+        <div class="loader-text">深呼吸を、ひとつ。</div>
+    </div>
+
+    <header class="header">
+        <h1 class="logo">整龍</h1>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg"></div>
+            <div class="particles" id="particles"></div>
+            <div class="hero-content">
+                <p class="hero-copy">
+                    <span class="line">心を静める。</span>
+                    <span class="line">集中する。</span>
+                    <span class="line">内観する。</span>
+                </p>
+                <div class="scroll-indicator">
+                    <span>深く入る</span>
+                    <div class="line-down"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Empathy Section -->
+        <section class="empathy section-padding" id="empathy">
+            <div class="container">
+                <div class="empathy-text-wrapper">
+                    <p class="fade-text">日々の仕事や家庭に追われ、<br>心身の余裕を失っていないだろうか。</p>
+                    <p class="fade-text">常に思考や情報が巡り、<br>休んでも頭が休まらない。</p>
+                    <p class="fade-text">自分と静かに向き合う時間。<br>精神的な豊かさを感じる瞬間。</p>
+                </div>
+                <div class="empathy-conclusion">
+                    <p class="fade-text">これからの人生を整えるために。<br>一度、立ち止まってみませんか。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concept Section -->
+        <section class="concept section-padding" id="concept">
+            <div class="concept-bg"></div>
+            <div class="container">
+                <h2 class="section-title fade-up">本来の自分を取り戻す</h2>
+                <div class="concept-content">
+                    <p class="fade-up">整龍は、単なるアートや癒しの時間ではありません。</p>
+                    <p class="fade-up">「気」と「場」を整え、自分自身を調律するための体験です。</p>
+                    <br><br>
+                    <p class="fade-up highlight">描くのではなく、整える。</p>
+                    <p class="fade-up">波動を知り、身体をゆるめ、深い集中の中で描く。<br>その一連のプロセスを通して、日常から人生そのものが整っていく。<br>これは、人と空間を整えるための統合的体験です。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services section-padding" id="services">
+            <div class="container">
+                <h2 class="section-title fade-up">体験の流れ</h2>
+                <div class="service-list">
+                    <div class="service-item fade-up">
+                        <div class="service-number">壱</div>
+                        <div class="service-text">
+                            <h3>波動解析</h3>
+                            <p>現在の心身・エネルギー状態や傾向を読み解き、今必要なテーマを明確にします。不足を補うのではなく、まずは「自分の状態を知る」ことから始まります。</p>
+                        </div>
+                    </div>
+                    <div class="service-item fade-up">
+                        <div class="service-number">弐</div>
+                        <div class="service-text">
+                            <h3>ヘッド＆ハンドコンディショニング</h3>
+                            <p>身体の緊張をゆるめ、気を鎮めます。思考のノイズを静めて深いリラックス状態へ導くことで、内観しやすく、描くための土台が整います。</p>
+                        </div>
+                    </div>
+                    <div class="service-item fade-up">
+                        <div class="service-number">参</div>
+                        <div class="service-text">
+                            <h3>描く瞑想（龍体フトマニ）</h3>
+                            <p>整った状態でフトマニを描く、瞑想的な創作体験。集中、無心、静けさの中で、自分自身と深く向き合う時間となります。</p>
+                        </div>
+                    </div>
+                    <div class="service-item fade-up">
+                        <div class="service-number">四</div>
+                        <div class="service-text">
+                            <h3>空間の調律</h3>
+                            <p>完成した龍体フトマニ図は、単なる作品ではありません。自宅や職場に飾ることで「場を整える存在」となり、日常空間に落ち着きと調和をもたらします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section class="works section-padding" id="works">
+            <div class="container">
+                <h2 class="section-title fade-up">作品と素材</h2>
+                <!-- Material Intro -->
+                <div class="material-intro fade-up">
+                    <div class="material-image">
+                        <img src="images/work1.jpg" alt="純金・純銀泥">
+                    </div>
+                    <div class="material-text">
+                        <h3>純金・純銀泥</h3>
+                        <p>神聖な輝きを放つ純金と純銀の泥を使用。物質的な美しさだけでなく、そのエネルギーそのものを紙へと定着させます。</p>
+                    </div>
+                </div>
+
+                <div class="works-list">
+                    <!-- Item 1 -->
+                    <div class="work-detail-item fade-up">
+                        <div class="wd-image">
+                            <img src="images/work2.jpg" alt="フトマニ百龍図">
+                        </div>
+                        <div class="wd-content">
+                            <h3 class="wd-title">フトマニ百龍図</h3>
+                            <p class="wd-catchphrase">「思考のノイズを静める百龍結界」</p>
+                            
+                            <div class="wd-section">
+                                <h4>テーマ</h4>
+                                <p>「内側を整え、本来の自分へ戻る」</p>
+                            </div>
+                            
+                            <div class="wd-section">
+                                <h4>意味</h4>
+                                <p>100体の龍が乱れた思考・感情・空間を整え“本来の中心”へ戻していく図。<br>龍は「外へ向かう力」ではなく内側を浄化し静けさを取り戻す象徴。</p>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>こんな人へおすすめ</h4>
+                                <ul class="wd-list">
+                                    <li>思考が止まらない</li>
+                                    <li>脳疲労が強い</li>
+                                    <li>不安感がある</li>
+                                    <li>人に振り回される</li>
+                                    <li>空間が落ち着かない</li>
+                                    <li>睡眠の質を整えたい</li>
+                                </ul>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>得られるイメージ</h4>
+                                <div class="wd-tags">
+                                    <span>頭が静かになる</span>
+                                    <span>集中力が整う</span>
+                                    <span>空間が軽く感じる</span>
+                                    <span>“軸”が戻る</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="work-detail-item fade-up">
+                        <div class="wd-image">
+                            <img src="images/work3.jpg" alt="重ね百龍図">
+                        </div>
+                        <div class="wd-content">
+                            <h3 class="wd-title">重ね百龍図</h3>
+                            <p class="wd-catchphrase">「停滞を突破する増幅の龍図」</p>
+                            
+                            <div class="wd-section">
+                                <h4>テーマ</h4>
+                                <p>「陰陽統合・現実化・増幅」</p>
+                            </div>
+                            
+                            <div class="wd-section">
+                                <h4>意味</h4>
+                                <p>金と銀、陽と陰、行動と直感。<br>二つのエネルギーが重なり合うことで“願い”ではなく“現実化する力”を高める龍図。<br>重ねるというのは、エネルギー増幅の象徴。</p>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>こんな人へおすすめ</h4>
+                                <ul class="wd-list">
+                                    <li>行動したいのに止まる</li>
+                                    <li>流れを変えたい</li>
+                                    <li>仕事運を上げたい</li>
+                                    <li>現実を動かしたい</li>
+                                    <li>勝負のタイミング</li>
+                                    <li>経営者</li>
+                                </ul>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>得られるイメージ</h4>
+                                <div class="wd-tags">
+                                    <span>決断力</span>
+                                    <span>行動力</span>
+                                    <span>現実を動かす力</span>
+                                    <span>流れを変える感覚</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="work-detail-item fade-up">
+                        <div class="wd-image">
+                            <img src="images/work4.jpg" alt="円（縁）龍図">
+                        </div>
+                        <div class="wd-content">
+                            <h3 class="wd-title">円（縁）龍図</h3>
+                            <p class="wd-catchphrase">「人と運を繋ぐ円満龍図」<br><span class="sub-catchphrase">良縁を巡らせる龍の円</span></p>
+                            
+                            <div class="wd-section">
+                                <h4>テーマ</h4>
+                                <p>「縁・循環・豊かさ」</p>
+                            </div>
+                            
+                            <div class="wd-section">
+                                <h4>意味</h4>
+                                <p>円は、“循環”と“繋がり”の象徴。<br>人・お金・仕事・愛情。人生の流れを円滑にし、必要な縁を引き寄せる龍図。<br>赤は生命力・情熱・活力。</p>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>こんな人へおすすめ</h4>
+                                <ul class="wd-list">
+                                    <li>人間関係を整えたい</li>
+                                    <li>良縁を引き寄せたい</li>
+                                    <li>商売繁盛</li>
+                                    <li>恋愛運・家族運・人脈運</li>
+                                </ul>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>得られるイメージ</h4>
+                                <div class="wd-tags">
+                                    <span>良い流れ</span>
+                                    <span>ご縁</span>
+                                    <span>愛情循環</span>
+                                    <span>温かい空間</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="work-detail-item fade-up">
+                        <div class="wd-image">
+                            <img src="images/work5.jpg" alt="フトマニ132龍鳳図">
+                        </div>
+                        <div class="wd-content">
+                            <h3 class="wd-title">フトマニ132龍鳳図</h3>
+                            <p class="wd-catchphrase">「攻めと守りを統合した最上位龍図」<br><span class="sub-catchphrase">龍と鳳凰が人生を守り導く</span></p>
+                            
+                            <div class="wd-section">
+                                <h4>テーマ</h4>
+                                <p>「守護・調和・成功」</p>
+                            </div>
+                            
+                            <div class="wd-section">
+                                <h4>意味</h4>
+                                <p>龍は“上昇”、鳳凰は“調和と再生”。<br>陰陽二つの存在が融合し人生を守りながら前へ進める図。<br>132という数は“完全性”や“統合”を象徴する特別な構造。</p>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>こんな人へおすすめ</h4>
+                                <ul class="wd-list">
+                                    <li>人生の転換期</li>
+                                    <li>独立・挑戦</li>
+                                    <li>大きな決断</li>
+                                    <li>自分を守りたい</li>
+                                    <li>家族を守りたい</li>
+                                </ul>
+                            </div>
+
+                            <div class="wd-section">
+                                <h4>得られるイメージ</h4>
+                                <div class="wd-tags">
+                                    <span>守られている感覚</span>
+                                    <span>安定感</span>
+                                    <span>運気の後押し</span>
+                                    <span>前進力</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta section-padding" id="cta">
+            <div class="washi-bg"></div>
+            <div class="container">
+                <div class="cta-content fade-up">
+                    <h2 class="cta-title">整龍 -SEIRYU-</h2>
+                    <p class="price">¥60,000<span>（税込）</span></p>
+                    <p class="cta-desc">人と空間を整える、統合的体験へ。</p>
+                    <a href="#" class="btn-primary">
+                        <span class="btn-text">ご予約・お問い合わせ</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 整龍 -SEIRYU- All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
