@@ -18,6 +18,16 @@
     --spacing-xl: 12rem;
 }
 
+@media (max-width: 768px) {
+    :root {
+        --spacing-xs: 0.75rem;
+        --spacing-sm: 1.5rem;
+        --spacing-md: 2.5rem;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+    }
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -711,16 +721,32 @@ h1, h2, h3, .hero-copy {
     }
     .wd-image {
         width: 100%;
-        aspect-ratio: 4 / 3;
+        /* aspect-ratio removed: allows tall images to show fully */
     }
     .wd-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .wd-catchphrase {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+    }
+    .wd-section p {
+        font-size: 0.95rem;
+    }
+    .wd-list li {
+        font-size: 0.9rem;
+    }
+    .wd-tags span {
+        font-size: 0.8rem;
+        padding: 0.35rem 0.8rem;
     }
     .wd-list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .material-intro {
+        max-width: 100%;
+    }
+    .wd-content {
+        gap: 1.2rem;
     }
 }
 
