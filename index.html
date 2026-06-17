@@ -6,6 +6,41 @@
     <title>整龍 -SEIRYU- | 自分自身を調律するための体験</title>
     <meta name="description" content="波動解析・ヘッド＆ハンドセラピー・龍体フトマニを描く瞑想を通して、本来の自分を取り戻し空間を整える体験を提供します。">
     
+    <!-- OGP / Twitter Card -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="整龍 -SEIRYU- | 自分自身を調律するための体験">
+    <meta property="og:description" content="波動解析・ヘッド＆ハンドセラピー・龍体フトマニを描く瞑想を通して、本来の自分を取り戻し空間を整える体験を提供します。">
+    <meta property="og:url" content="https://seiryu132.github.io/hutomanizu/">
+    <meta property="og:image" content="https://seiryu132.github.io/hutomanizu/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "整龍 -SEIRYU-",
+      "description": "波動解析・ヘッド＆ハンドセラピー・龍体フトマニを描く瞑想を通した自己調律・空間調律体験",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "整龍",
+        "image": "https://seiryu132.github.io/hutomanizu/images/og-image.jpg",
+        "priceRange": "¥40,000"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "40000",
+        "priceCurrency": "JPY",
+        "availability": "https://schema.org/InStock",
+        "url": "https://seiryu132.github.io/hutomanizu/"
+      }
+    }
+    </script>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,6 +105,33 @@
                     <br><br>
                     <p class="fade-up highlight">描くのではなく、整える。</p>
                     <p class="fade-up">波動を知り、身体をゆるめ、深い集中の中で描く。その一連のプロセスを通して、日常から人生そのものが整っていく。これは、人と空間を整えるための統合的体験です。</p>
+                    
+                    <div class="inline-cta fade-up">
+                        <a href="https://lin.ee/SpUNMGM" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <span class="btn-text">公式LINEでご相談・予約</span>
+                            <div class="btn-glow"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile section-padding" id="profile">
+            <div class="container">
+                <h2 class="section-title fade-up">調律者</h2>
+                <div class="profile-content fade-up">
+                    <div class="profile-image">
+                        <!-- TODO: 要記入 - 施術者・制作者のプロフィール画像を配置 -->
+                        <!-- <img src="images/profile.jpg" alt="プロフィール写真" loading="lazy"> -->
+                    </div>
+                    <div class="profile-text">
+                        <h3><!-- TODO: 要記入 - 名前 -->名前を入れる</h3>
+                        <span class="title"><!-- TODO: 要記入 - 肩書き -->肩書き・称号を入れる</span>
+                        <!-- TODO: 要記入 - 経歴や想いを記述 -->
+                        <p>ここにプロフィールや、なぜ「整龍」という体験を提供しようと思ったのか、その想いや経歴を記載してください。</p>
+                        <p>お客様に「この人に任せたい」と思っていただけるような、誠実で静かなトーンの文章を推奨いたします。</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -304,9 +366,181 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Diagnosis UI -->
+                <div class="diagnosis-container fade-up" style="margin-top: 6rem;">
+                    <h3 style="font-family: var(--font-heading); color: var(--accent-gold); margin-bottom: 1rem;">あなたに合う龍図は？（簡易診断）</h3>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem;">直感で当てはまるものを選んでください。</p>
+                    
+                    <div id="diag-app">
+                        <div class="diag-question" id="diag-q">思考が止まらず、脳が疲れていると感じる</div>
+                        <div class="diag-options" id="diag-opts">
+                            <button class="diag-btn" onclick="nextDiag(true)">はい、とても感じる</button>
+                            <button class="diag-btn" onclick="nextDiag(false)">いいえ、それほどでもない</button>
+                        </div>
+                        <div class="diag-result" id="diag-res">
+                            <h4 style="font-size: 1.5rem; color: var(--accent-gold); margin-bottom: 1rem;">おすすめの龍図：<br><span id="res-name">フトマニ百龍図</span></h4>
+                            <p id="res-desc" style="margin-bottom: 2rem;">100体の龍が乱れた思考・感情・空間を整え、本来の中心へ戻していく図。思考のノイズを静めたいあなたに最適です。</p>
+                            <button class="diag-btn" onclick="resetDiag()" style="font-size: 0.9rem; padding: 0.5rem 2rem;">もう一度診断する</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section class="gallery section-padding" id="gallery">
+            <div class="container">
+                <h2 class="section-title fade-up">調律の風景</h2>
+                <div class="gallery-section-grid">
+                    <!-- TODO: 要記入 - 実際の風景写真を配置 (画像パスを書き換え) -->
+                    <div class="g-item fade-up" onclick="openLightbox(this)"><img src="images/work1.jpg" alt="セッション風景" loading="lazy"></div>
+                    <div class="g-item fade-up" onclick="openLightbox(this)"><img src="images/work2.jpg" alt="空間" loading="lazy"></div>
+                    <div class="g-item fade-up" onclick="openLightbox(this)"><img src="images/work3.jpg" alt="制作過程" loading="lazy"></div>
+                    <div class="g-item fade-up" onclick="openLightbox(this)"><img src="images/work4.jpg" alt="完成作品" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section-padding" id="testimonials">
+            <div class="container">
+                <h2 class="section-title fade-up">体験された方の声</h2>
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card fade-up">
+                        <div class="testimonial-header">
+                            <div class="t-avatar">
+                                <!-- <img src="images/user1.jpg" alt="M.S様" loading="lazy"> -->
+                            </div>
+                            <div class="t-meta">
+                                <h4><!-- TODO: 要記入 -->M.S 様</h4>
+                                <span><!-- TODO: 要記入 -->経営者 / 40代</span>
+                            </div>
+                        </div>
+                        <div class="t-body">
+                            <!-- TODO: 要記入 -->
+                            <p>常に先のことを考えて頭が休まらない状態でしたが、体験後は嘘のように頭が静まりました。フトマニ図をオフィスに飾ってから、空間の空気が澄んでいるのを感じます。</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card fade-up">
+                        <div class="testimonial-header">
+                            <div class="t-avatar"></div>
+                            <div class="t-meta">
+                                <h4><!-- TODO: 要記入 -->Y.A 様</h4>
+                                <span><!-- TODO: 要記入 -->クリエイター / 30代</span>
+                            </div>
+                        </div>
+                        <div class="t-body">
+                            <!-- TODO: 要記入 -->
+                            <p>セラピーで完全にリセットされた後の「描く時間」は、まさに瞑想でした。純金の輝きを見るたびに、自分の中心に戻れるような感覚があります。</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card fade-up">
+                        <div class="testimonial-header">
+                            <div class="t-avatar"></div>
+                            <div class="t-meta">
+                                <h4><!-- TODO: 要記入 -->K.T 様</h4>
+                                <span><!-- TODO: 要記入 -->会社員 / 50代</span>
+                            </div>
+                        </div>
+                        <div class="t-body">
+                            <!-- TODO: 要記入 -->
+                            <p>波動解析で自分の状態を数値化して知れたのが良かったです。思い当たる節ばかりで、その後どう整えていくかの指針になりました。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Info & Price Section -->
+        <section class="info-price section-padding" id="info">
+            <div class="container">
+                <h2 class="section-title fade-up">料金・ご案内</h2>
+                <div class="info-price-container fade-up">
+                    <table class="price-table">
+                        <tr>
+                            <th>基本セッション</th>
+                            <td>
+                                <span style="font-size: 1.5rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem;">¥40,000〜<span style="font-size: 1rem; color: var(--text-muted);">（税込）</span></span>
+                                <p style="font-size: 0.9rem; color: var(--text-muted);">【含まれる内容】ヘッド＆ハンドセラピー / 龍体フトマニ描く瞑想体験 / 完成図の持ち帰り<br>※描く図のサイズや種類（132龍鳳図など）により料金が変動します。</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>波動解析オプション</th>
+                            <td>
+                                <span style="font-size: 1.2rem; color: var(--accent-gold); display: block; margin-bottom: 0.5rem;">＋¥11,000<span style="font-size: 0.9rem; color: var(--text-muted);">（税込）</span></span>
+                                <p style="font-size: 0.9rem; color: var(--text-muted);">現在の心身・エネルギー状態の読み解き（1時間）</p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <dl class="info-list">
+                        <!-- TODO: 要記入 - 各項目の詳細を書き換えてください -->
+                        <li>
+                            <dt>所要時間</dt>
+                            <dd>約3〜4時間（波動解析を追加する場合は＋1時間）</dd>
+                        </li>
+                        <li>
+                            <dt>開催場所</dt>
+                            <dd>東京都内プライベートサロン（詳細はご予約時にお伝えいたします）</dd>
+                        </li>
+                        <li>
+                            <dt>実施形式</dt>
+                            <dd>完全予約制・対面のみ（オンライン不可）</dd>
+                        </li>
+                        <li style="border-bottom: none;">
+                            <dt>キャンセル規定</dt>
+                            <dd>3日前まで無料 / 前日50% / 当日100% となります。</dd>
+                        </li>
+                    </dl>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq section-padding" id="faq">
+            <div class="container">
+                <h2 class="section-title fade-up">よくあるご質問</h2>
+                <div class="faq-list fade-up">
+                    <!-- TODO: 要記入 - FAQの文言を調整・追加してください -->
+                    <details class="faq-item">
+                        <summary>絵を描くのが苦手ですが大丈夫ですか？</summary>
+                        <div class="faq-answer">全く問題ありません。整龍は芸術作品を作ることが目的ではなく、図形をなぞる「作業」を通じた瞑想です。お手本に沿って描いていくため、どなたでも完成させることができます。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>波動解析は必須ですか？</summary>
+                        <div class="faq-answer">必須ではありません。オプションとなっておりますが、ご自身の現在地を客観的に知ることで、その後の体験がより深く有意義なものになるため、初めての方には推奨しております。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>持ち物はありますか？</summary>
+                        <div class="faq-answer">特に必要なものはございません。純金や純銀泥を使用しますが、衣服が汚れることはほとんどありません。リラックスできる服装でお越しください。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>複数人での参加は可能ですか？</summary>
+                        <div class="faq-answer">ご友人やご家族とのペア参加も承っております（最大2名様まで）。公式LINEよりご相談ください。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>どのような効果がありますか？</summary>
+                        <div class="faq-answer">思考のノイズが静まり、頭がスッキリする、直感力が高まる、熟睡できるようになるなどのご感想を多くいただきます。また、持ち帰った図をご自宅に飾ることで空間の気が整う効果も期待できます。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>支払方法を教えてください。</summary>
+                        <div class="faq-answer">事前銀行振込、または当日現金・クレジットカード払いにて承っております。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>どの龍図を選べばよいかわかりません。</summary>
+                        <div class="faq-answer">当日ご相談しながら決めることも可能です。また、波動解析で導き出された状態に合わせて最適な図をご提案することもできます。</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>所要時間はどれくらいですか？</summary>
+                        <div class="faq-answer">波動解析なしの場合は約3時間、ありの場合は約4時間となります。お時間に余裕を持ってお越しください。</div>
+                    </details>
+                </div>
+            </div>
+        </section>
         <!-- CTA Section -->
         <section class="cta section-padding" id="cta">
             <div class="washi-bg"></div>
@@ -327,6 +561,17 @@
     <footer class="footer">
         <p>&copy; 2026 整龍 -SEIRYU- All rights reserved.</p>
     </footer>
+
+    <!-- Sticky CTA (Mobile) -->
+    <div class="sticky-cta" id="sticky-cta">
+        <a href="https://lin.ee/SpUNMGM" target="_blank" rel="noopener noreferrer" class="sticky-btn">公式LINEでご相談・予約</a>
+    </div>
+
+    <!-- Lightbox Container -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <img src="" alt="拡大画像" id="lightbox-img">
+    </div>
 
     <script src="main.js"></script>
 </body>
