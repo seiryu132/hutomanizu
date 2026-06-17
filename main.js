@@ -225,35 +225,69 @@ window.closeLightbox = function() {
 
 // Diagnosis Logic (Global)
 const questions = [
-    "思考が止まらず、脳が疲れていると感じる",
-    "今の状況を打開し、現実を動かしたい",
-    "人間関係やご縁をより良く循環させたい",
-    "人生の転換期であり、強力な後押しや守りが欲しい"
+    {
+        q: "Q1. 日常生活の中で、最も「整えたい」と感じるものはどれですか？",
+        options: [
+            { text: "頭の中のざわつきや、思考のノイズ", target: 0, points: 2 },
+            { text: "行動できない自分や、現実の停滞感", target: 1, points: 2 },
+            { text: "人間関係のストレスや、ご縁の滞り", target: 2, points: 2 },
+            { text: "将来への漠然とした不安や、守りが欲しい感覚", target: 3, points: 2 }
+        ]
+    },
+    {
+        q: "Q2. 「龍」という言葉から、今あなたが最も必要としている力はどれですか？",
+        options: [
+            { text: "浄化と静寂（リセット）", target: 0, points: 1 },
+            { text: "突破力と現実化（エネルギー）", target: 1, points: 1 },
+            { text: "循環とつながり（豊かさ）", target: 2, points: 1 },
+            { text: "守護と統合（お守り）", target: 3, points: 1 }
+        ]
+    },
+    {
+        q: "Q3. 完成した図を飾る空間は、どのような場所にしたいですか？",
+        options: [
+            { text: "ぐっすり眠れる寝室や、集中したい書斎", target: 0, points: 1 },
+            { text: "仕事の成果を出したいオフィスやデスク", target: 1, points: 1 },
+            { text: "人が集まるリビングやサロン", target: 2, points: 1 },
+            { text: "家全体の気を守る玄関や、特別な空間", target: 3, points: 1 }
+        ]
+    }
 ];
 
 const results = [
-    { name: "フトマニ百龍図", desc: "100体の龍が乱れた思考・感情・空間を整え、本来の中心へ戻していく図。思考のノイズを静めたいあなたに最適です。" },
-    { name: "重ね百龍図", desc: "二つのエネルギーが重なり合うことで、願いではなく現実化する力を高める龍図。行動力と決断力を求めるあなたに最適です。" },
-    { name: "円（縁）龍図", desc: "円は循環と繋がりの象徴。人・お金・仕事・愛情、人生の流れを円滑にし、必要な縁を引き寄せたいあなたに最適です。" },
-    { name: "フトマニ132龍鳳図", desc: "龍は上昇、鳳凰は調和と再生。陰陽二つの存在が融合し、人生を守りながら前へ進める最上位の図。転換期を迎えるあなたに最適です。" }
+    { name: "フトマニ百龍図", desc: "100体の龍が乱れた思考・感情・空間を整え、本来の中心へ戻していく図。思考のノイズを静め、深いリセットを求めるあなたに最適です。" },
+    { name: "重ね百龍図", desc: "二つのエネルギーが重なり合うことで、願いではなく現実化する力を高める龍図。停滞を打破し、行動力と決断力を求めるあなたに最適です。" },
+    { name: "円（縁）龍図", desc: "円は循環と繋がりの象徴。人・お金・仕事・愛情など人生の流れを円滑にし、良きご縁を引き寄せたいあなたに最適です。" },
+    { name: "フトマニ132龍鳳図", desc: "龍は上昇、鳳凰は調和と再生。陰陽二つの存在が融合し、人生を守りながら前へ進める最上位の図。転換期を迎え、強力な守護を求めるあなたに最適です。" }
 ];
 
 let currentStep = 0;
-let diagScores = [0, 0, 0, 0]; // Scores for each result
+let diagScores = [0, 0, 0, 0];
 
-window.nextDiag = function(answer) {
-    if (answer) {
-        diagScores[currentStep] += 1;
-    }
+window.renderQuestion = function() {
+    const q = questions[currentStep];
+    document.getElementById('diag-q').innerText = q.q;
     
+    const optsContainer = document.getElementById('diag-opts');
+    optsContainer.innerHTML = ''; // clear
+    
+    q.options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'diag-btn';
+        btn.innerText = opt.text;
+        btn.onclick = () => window.nextDiag(opt.target, opt.points);
+        optsContainer.appendChild(btn);
+    });
+};
+
+window.nextDiag = function(targetIndex, points) {
+    diagScores[targetIndex] += points;
     currentStep++;
     
     if (currentStep < questions.length) {
-        // Show next question
-        document.getElementById('diag-q').innerText = questions[currentStep];
+        window.renderQuestion();
     } else {
-        // Show result
-        showDiagResult();
+        window.showDiagResult();
     }
 };
 
@@ -271,9 +305,6 @@ window.showDiagResult = function() {
         }
     }
     
-    // If all no (0 score), default to first one to calm the mind
-    if (maxScore === 0) maxIndex = 0;
-    
     document.getElementById('res-name').innerText = results[maxIndex].name;
     document.getElementById('res-desc').innerText = results[maxIndex].desc;
     document.getElementById('diag-res').classList.add('active');
@@ -284,11 +315,18 @@ window.resetDiag = function() {
     diagScores = [0, 0, 0, 0];
     
     document.getElementById('diag-q').style.display = 'block';
-    document.getElementById('diag-q').innerText = questions[0];
     document.getElementById('diag-opts').style.display = 'flex';
     
     const diagRes = document.getElementById('diag-res');
     diagRes.classList.remove('active');
-    // Force reflow to restart animation
     void diagRes.offsetWidth; 
+    
+    window.renderQuestion();
 };
+
+// Initialize first question on load if the elements exist
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.getElementById('diag-q')) {
+        window.renderQuestion();
+    }
+});
