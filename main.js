@@ -8,18 +8,18 @@ document.addEventListener("DOMContentLoaded", () => {
         
         tl.to(".loader-text", {
             opacity: 1,
-            duration: 1.5,
+            duration: 0.3,
             ease: "power2.inOut"
         })
         .to(".loader-text", {
             opacity: 0,
-            duration: 1.5,
+            duration: 0.3,
             ease: "power2.inOut",
-            delay: 1
+            delay: 0.4
         })
         .to(".loader", {
             opacity: 0,
-            duration: 1.5,
+            duration: 0.3,
             ease: "power2.inOut",
             onComplete: () => {
                 document.querySelector(".loader").style.display = "none";
